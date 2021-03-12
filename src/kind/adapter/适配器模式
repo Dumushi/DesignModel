@@ -1,0 +1,27 @@
+类型：分为两种模式：类结构型模式和对象结构型模式
+                    类结构型模式采用继承机制来组织接口和类、（耦合度高应用少）
+                    对象结构型模式采用组合或聚合来组合对象
+
+作用：客户端通过适配器可以透明的调用目标接口
+
+架构：目标接口、适配者类、适配器类
+
+
+例子：例如投影仪和笔记本连接，笔记本没有HDMI接口需要用HDMI转USB或者vga的适配器转换才可以连上
+
+
+
+类适配器模式：
+Adapter继承Adaptee实现Target重写Target的show方法，show方法体中调用Adaptee的special方法，多态创建Target对象 调用Adapter的show方法。
+适配器      适配者      目标接口
+
+对象适配器模式：
+就是在Adapter中创建Adaptee的对象，通过Adaptee对象调用它的方法
+
+
+个人理解：
+类适配器和对象适配器的区别：
+                代码层面：类适配器中继承Adaptee类用super调用Adaptee的方法；对象适配器创建Adaptee对象通过Adaptee对象调用Adaptee方法。
+                作用层面：Adaptee想要调用Target接口但是无法直接调用情况下，通过适配器类Adapter（继承Adaptee实现Target）可以隐式的进行调用
+
+扩展：双向适配器模式
